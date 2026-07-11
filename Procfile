@@ -1,1 +1,1 @@
-web: gunicorn StudentAI.wsgi
+web: gunicorn StudentAI.wsgi:application
