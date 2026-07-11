@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.env
+
+# VS Code
+.vscode/
+
+# Django generated static files
+staticfiles/
+
+# OS files
+Thumbs.db
+.DS_Store

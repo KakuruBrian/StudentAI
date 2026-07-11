@@ -1,0 +1,351 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Student Prediction | StudentAI</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg">
+
+    <div class="container">
+
+        <a class="navbar-brand text-white fw-bold fs-3">
+
+            🎓 StudentAI
+
+        </a>
+
+        <a href="/about/" class="btn btn-outline-warning">
+    <i class="fa-solid fa-circle-info"></i> About AI
+</a>
+
+        <div>
+
+            <a href="/" class="btn btn-outline-light me-2">
+
+                <i class="fa-solid fa-house"></i> Home
+
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-10">
+
+            <div class="glass">
+
+                <div class="text-center mb-5">
+
+                    <i class="fa-solid fa-brain fa-4x text-warning mb-3"></i>
+
+                    <h1 class="fw-bold">
+
+                        AI Student Prediction
+
+                    </h1>
+
+                    <p class="text-light">
+
+                        Enter the student's academic information below and let
+                        Artificial Intelligence predict the final outcome.
+
+                    </p>
+
+                </div>
+
+                {% if error %}
+
+                <div class="alert alert-danger">
+
+                    {{ error }}
+
+                </div>
+
+                {% endif %}
+
+                <form method="POST" id="predictionForm">
+
+                    {% csrf_token %}
+
+                    <div class="row">
+
+                        <div class="col-md-6 mb-4">
+
+                            <label class="form-label text-white">
+
+                                <i class="fa-solid fa-venus-mars"></i>
+
+                                Gender
+
+                            </label>
+
+                            <select name="sex" class="form-select">
+
+                                <option value="M">Male</option>
+
+                                <option value="F">Female</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+
+                            <label class="form-label text-white">
+
+                                <i class="fa-solid fa-user"></i>
+
+                                Age
+
+                            </label>
+
+                            <input type="number"
+                                name="age"
+                                min="15"
+                                max="22"
+                                class="form-control"
+                                required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+
+                            <label class="form-label text-white">
+
+                                <i class="fa-solid fa-book"></i>
+
+                                Study Time
+
+                            </label>
+
+                            <select name="studytime" class="form-select">
+
+                                <option value="1">Less than 2 Hours</option>
+
+                                <option value="2">2 - 5 Hours</option>
+
+                                <option value="3">5 - 10 Hours</option>
+
+                                <option value="4">More than 10 Hours</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+
+                            <label class="form-label text-white">
+
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+
+                                Previous Failures
+
+                            </label>
+
+                            <select name="failures" class="form-select">
+
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+
+                            <label class="form-label text-white">
+
+                                <i class="fa-solid fa-calendar-days"></i>
+
+                                Absences
+
+                            </label>
+
+                            <input type="number"
+                                name="absences"
+                                class="form-control"
+                                min="0"
+                                required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+
+                            <label class="form-label text-white">
+
+                                <i class="fa-solid fa-1"></i>
+
+                                First Grade (G1)
+
+                            </label>
+
+                            <input type="number"
+                                name="G1"
+                                min="0"
+                                max="20"
+                                class="form-control"
+                                required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+
+                            <label class="form-label text-white">
+
+                                <i class="fa-solid fa-2"></i>
+
+                                Second Grade (G2)
+
+                            </label>
+
+                            <input type="number"
+                                name="G2"
+                                min="0"
+                                max="20"
+                                class="form-control"
+                                required>
+
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+
+                            <label class="form-label text-white">
+
+                                <i class="fa-solid fa-graduation-cap"></i>
+
+                                Interested in Higher Education?
+
+                            </label>
+
+                            <select name="higher" class="form-select">
+
+                                <option value="yes">Yes</option>
+
+                                <option value="no">No</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <div class="text-center mt-5">
+
+                        <button class="btn btn-warning btn-lg px-5">
+
+                            <i class="fa-solid fa-robot"></i>
+
+                            Predict Performance
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="loadingOverlay" class="loading-screen" style="display:none;">
+
+    <div class="loading-card">
+
+        <i class="fa-solid fa-brain brain-icon"></i>
+
+        <h2 class="mt-4">
+            StudentAI is Thinking...
+        </h2>
+
+        <p id="loadingMessage">
+
+            Initializing AI Model...
+
+        </p>
+
+        <div class="spinner-border text-warning mt-4"
+             style="width:70px;height:70px;">
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const form = document.getElementById("predictionForm");
+
+const overlay = document.getElementById("loadingOverlay");
+
+const message = document.getElementById("loadingMessage");
+
+const messages = [
+
+    "Initializing AI Model...",
+
+    "Processing Student Information...",
+
+    "Analyzing Academic Performance...",
+
+    "Calculating Confidence Score...",
+
+    "Generating Prediction..."
+
+];
+
+form.addEventListener("submit", function(){
+
+    overlay.style.display = "flex";
+
+    let i = 0;
+
+    const interval = setInterval(() => {
+
+        i++;
+
+        if(i < messages.length){
+
+            message.innerHTML = messages[i];
+
+        }
+
+    },700);
+
+    // Allow the browser to continue submitting the form normally.
+
+});
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,448 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:linear-gradient(135deg,#0f172a,#1e293b,#312e81);
+
+    min-height:100vh;
+
+    color:white;
+
+}
+
+.navbar{
+
+    backdrop-filter:blur(15px);
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.hero{
+
+    padding-top:100px;
+
+    text-align:center;
+
+}
+
+.hero h1{
+
+    font-size:60px;
+
+    font-weight:700;
+
+}
+
+.hero p{
+
+    font-size:22px;
+
+    color:#d1d5db;
+
+}
+
+.glass{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+}
+
+.card-stat{
+
+    transition:.4s;
+
+}
+
+.card-stat:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+.form-control,
+.form-select{
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:12px;
+
+}
+
+.form-control:focus,
+.form-select:focus{
+
+    background:rgba(255,255,255,.18);
+
+    color:white;
+
+    box-shadow:0 0 10px rgba(255,193,7,.5);
+
+}
+
+.form-select option{
+
+    color:black;
+
+}
+
+label{
+
+    font-weight:600;
+
+}
+
+.btn-warning{
+
+    border-radius:40px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.btn-warning:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:0 0 20px gold;
+
+}
+
+.glass{
+
+    animation:fadeIn 1s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.confidence-progress{
+
+    height:35px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+}
+
+.recommendation-box{
+
+    background:rgba(255,255,255,.12);
+
+    padding:25px;
+
+    border-radius:15px;
+
+    border-left:5px solid gold;
+
+    font-size:18px;
+
+    color:white;
+
+}
+
+.glass-mini{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:15px;
+
+    padding:20px;
+
+    transition:.3s;
+
+}
+
+.glass-mini:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.progress{
+
+    background:rgba(255,255,255,.2);
+
+}
+
+
+/* ===== Result Page ===== */
+
+.success-icon{
+
+    font-size:90px;
+
+    color:#00ff88;
+
+    animation:bounce 1s infinite alternate;
+
+}
+
+.danger-icon{
+
+    font-size:90px;
+
+    color:#ff4d4d;
+
+    animation:shake 1s infinite;
+
+}
+
+.circle-wrap{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.circle{
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    conic-gradient(
+        #ffc107 0deg,
+        rgba(255,255,255,.15) 0deg
+    );
+
+    transition:background .2s linear;
+
+}
+
+.inside-circle{
+
+    width:170px;
+
+    height:170px;
+
+    background:#0f172a;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    color:white;
+
+}
+
+.inside-circle span{
+
+    font-size:40px;
+
+    font-weight:bold;
+
+}
+
+.recommendation-box{
+
+    background:rgba(255,255,255,.08);
+
+    padding:25px;
+
+    border-radius:15px;
+
+    font-size:18px;
+
+    border-left:5px solid gold;
+
+}
+
+.glass-mini{
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:15px;
+
+    padding:20px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.glass-mini:hover{
+
+    transform:translateY(-8px);
+
+}
+
+@keyframes spinIn{
+
+    from{
+
+        transform:scale(.2) rotate(-360deg);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1) rotate(0);
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes bounce{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+@keyframes shake{
+
+    0%{transform:translateX(0);}
+    25%{transform:translateX(-4px);}
+    50%{transform:translateX(4px);}
+    75%{transform:translateX(-4px);}
+    100%{transform:translateX(0);}
+
+}
+
+/* ===== AI Loading Screen ===== */
+
+.loading-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.loading-card{
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.brain-icon{
+
+    font-size:90px;
+
+    color:#ffc107;
+
+    animation:pulseBrain 1.2s infinite;
+
+}
+
+#loadingText{
+
+    font-size:22px;
+
+    margin-top:20px;
+
+    min-height:40px;
+
+}
+
+@keyframes pulseBrain{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.2);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+

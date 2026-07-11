@@ -1,0 +1,341 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>About StudentAI</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg">
+
+<div class="container">
+
+<a class="navbar-brand text-white fw-bold fs-3">
+
+🎓 StudentAI
+
+</a>
+
+<div>
+
+<a href="/" class="btn btn-outline-light me-2">
+
+Home
+
+</a>
+
+<a href="/predict/" class="btn btn-warning me-2">
+
+Predict
+
+</a>
+
+<a href="/about/" class="btn btn-primary">
+
+About AI
+
+</a>
+
+</div>
+
+</div>
+
+</nav>
+
+<div class="container py-5">
+
+<div class="glass">
+
+<div class="text-center mb-5">
+
+<i class="fa-solid fa-brain fa-5x text-warning mb-4"></i>
+
+<h1 class="fw-bold">
+
+About StudentAI
+
+</h1>
+
+<p class="lead text-light">
+
+An Artificial Intelligence powered web application that predicts whether a student is likely to pass or fail based on academic and personal factors.
+
+</p>
+
+</div>
+
+<div class="row">
+
+<div class="col-md-6">
+
+<div class="glass-mini h-100">
+
+<h3>
+
+<i class="fa-solid fa-robot text-warning"></i>
+
+Machine Learning Model
+
+</h3>
+
+<hr>
+
+<p>
+
+<strong>Algorithm:</strong> Random Forest Classifier
+
+</p>
+
+<p>
+
+<strong>Accuracy:</strong> 92.41%
+
+</p>
+
+<p>
+
+<strong>Framework:</strong> Scikit-learn Pipeline
+
+</p>
+
+<p>
+
+<strong>Language:</strong> Python
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-6">
+
+<div class="glass-mini h-100">
+
+<h3>
+
+<i class="fa-solid fa-database text-info"></i>
+
+Dataset
+
+</h3>
+
+<hr>
+
+<p>
+
+Student Performance Dataset
+
+</p>
+
+<p>
+
+395 student records
+
+</p>
+
+<p>
+
+Academic performance dataset from Kaggle
+
+</p>
+
+<p>
+
+Binary prediction:
+
+Pass or Fail
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="row mt-4">
+
+<div class="col-md-6">
+
+<div class="glass-mini h-100">
+
+<h3>
+
+<i class="fa-solid fa-list-check text-success"></i>
+
+Input Features
+
+</h3>
+
+<hr>
+
+<ul>
+
+<li>Gender</li>
+
+<li>Age</li>
+
+<li>Study Time</li>
+
+<li>Previous Failures</li>
+
+<li>Absences</li>
+
+<li>First Grade (G1)</li>
+
+<li>Second Grade (G2)</li>
+
+<li>Higher Education Interest</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="col-md-6">
+
+<div class="glass-mini h-100">
+
+<h3>
+
+<i class="fa-solid fa-gears text-danger"></i>
+
+Technology Stack
+
+</h3>
+
+<hr>
+
+<ul>
+
+<li>Django</li>
+
+<li>Python</li>
+
+<li>Scikit-learn</li>
+
+<li>Pandas</li>
+
+<li>Joblib</li>
+
+<li>Bootstrap 5</li>
+
+<li>HTML5 & CSS3</li>
+
+<li>SQLite</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="glass-mini mt-5">
+
+<h3 class="text-center mb-4">
+
+<i class="fa-solid fa-circle-info text-warning"></i>
+
+How the AI Works
+
+</h3>
+
+<div class="row text-center">
+
+<div class="col-md-3">
+
+<i class="fa-solid fa-keyboard fa-3x text-info mb-3"></i>
+
+<h5>1. User Input</h5>
+
+<p>Student information is entered through the prediction form.</p>
+
+</div>
+
+<div class="col-md-3">
+
+<i class="fa-solid fa-filter fa-3x text-warning mb-3"></i>
+
+<h5>2. Preprocessing</h5>
+
+<p>The Scikit-learn pipeline automatically prepares the data.</p>
+
+</div>
+
+<div class="col-md-3">
+
+<i class="fa-solid fa-brain fa-3x text-success mb-3"></i>
+
+<h5>3. AI Prediction</h5>
+
+<p>The Random Forest model predicts whether the student is likely to pass or fail.</p>
+
+</div>
+
+<div class="col-md-3">
+
+<i class="fa-solid fa-chart-line fa-3x text-primary mb-3"></i>
+
+<h5>4. Results</h5>
+
+<p>The system displays the prediction, confidence score and recommendation.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="text-center mt-5">
+
+<a href="/predict/" class="btn btn-warning btn-lg">
+
+<i class="fa-solid fa-robot"></i>
+
+Try the AI Predictor
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<footer class="text-center text-white py-4">
+
+<p>
+
+Designed and Developed by <strong>Brian Kakuru</strong>
+
+</p>
+
+<p>
+
+Bachelor of Computer Science • Africa Renewal University
+
+</p>
+
+</footer>
+
+</body>
+
+</html>
