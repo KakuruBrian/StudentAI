@@ -14,7 +14,7 @@ model = joblib.load(MODEL_PATH)
 print("=" * 60)
 print("MODEL LOADED FROM:", MODEL_PATH)
 print("Expected Features:")
-print(model.feature_names_in_)
+#print(model.feature_names_in_)
 print("=" * 60)
 
 
@@ -40,7 +40,7 @@ def predict(request):
 
             # Debug: Show the submitted data
             print("\nSubmitted Student Data:")
-            print(student)
+            #print(student)
 
             prediction = model.predict(student)[0]
 
@@ -72,7 +72,7 @@ def predict(request):
 
         except Exception as e:
             print("\nERROR:")
-            print(e)
+            #print(e)
 
             return render(request, "predict.html", {
                 "error": str(e)
