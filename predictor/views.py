@@ -8,7 +8,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Load trained pipeline
 MODEL_PATH = BASE_DIR / "model" / "student_pipeline.pkl"
-model = joblib.load(MODEL_PATH)
+
+import os
+
+print("MODEL PATH:", MODEL_PATH)
+print("MODEL EXISTS:", os.path.exists(MODEL_PATH))
+
+try:
+    model = joblib.load(MODEL_PATH)
+    print("MODEL LOADED SUCCESSFULLY")
+except Exception as e:
+    print("MODEL LOAD ERROR:", e)
+    model = None
 
 # Debug: Print the features expected by the model
 print("=" * 60)
